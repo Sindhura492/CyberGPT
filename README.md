@@ -43,7 +43,7 @@ To democratize cybersecurity by making advanced security assessment tools access
 
 ## ✨ Key Features
 
-### 🤖 **MIRA - AI Security Assistant**
+### 🤖 **  - AI Security Assistant**
 
 <details open>
 <summary><b>Intelligent Conversational Interface</b></summary>
@@ -76,17 +76,9 @@ To democratize cybersecurity by making advanced security assessment tools access
 
 #### **DAST (Dynamic Application Security Testing)**
 - Automated web application vulnerability scanning
-- OWASP ZAP integration for industry-standard testing
 - Active and passive scan modes
 - Real-time vulnerability detection
 - Comprehensive scan reports with severity ratings
-
-#### **SAST (Static Application Security Testing)**
-- Source code security analysis
-- SonarQube integration for code quality checks
-- Support for multiple programming languages
-- Security hotspot identification
-- Code smell and bug detection
 
 #### **Baseline Security Scanning**
 - Automated security baseline assessments
@@ -259,30 +251,30 @@ To democratize cybersecurity by making advanced security assessment tools access
 │  │   Chat       │  │  Scanning    │  │  Knowledge   │  │  Report  │   │
 │  │  Service     │  │  Services    │  │    Graph     │  │ Service  │   │
 │  │              │  │              │  │   Service    │  │          │   │
-│  │ • OpenAI     │  │ • ZAP DAST   │  │ • Neo4j      │  │ • PDF    │   │
-│  │ • RAG        │  │ • SonarQube  │  │ • Cypher     │  │ • Export │   │
-│  │ • Streaming  │  │ • Baseline   │  │ • Analytics  │  │ • Store  │   │
+│  │ • OpenAI     │  │              │  │ • Neo4j      │  │ • HTML   │   │
+│  │ • RAG        │  │              │  │ • Cypher     │  │ • MDX    │
+│  │ • Streaming  │  │              │  │ • Analytics  │  │          │   │
 │  └──────────────┘  └──────────────┘  └──────────────┘  └──────────┘   │
 └─────────────────────────────────────────────────────────────────────────┘
                                     ↕
-┌─────────────────────────────────────────────────────────────────────────┐
-│                        DATA LAYER                                        │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────┐   │
-│  │  PostgreSQL  │  │    Neo4j     │  │   Pinecone   │  │ Supabase │   │
-│  │  (Prisma)    │  │  Graph DB    │  │  Vector DB   │  │ Storage  │   │
-│  │              │  │              │  │              │  │          │   │
-│  │ • Users      │  │ • Entities   │  │ • Embeddings │  │ • Files  │   │
-│  │ • Scans      │  │ • Relations  │  │ • Semantic   │  │ • Reports│   │
-│  │ • Reports    │  │ • CVEs       │  │ • Search     │  │ • Assets │   │
-│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────┘   │
-└─────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────┐
+│                        DATA LAYER                     │
+│  ┌──────────────┐  ┌──────────────┐    ┌──────────┐   │
+│  │  PostgreSQL  │  │    Neo4j     │    │ Supabase │   │
+│  │  (Prisma)    │  │  Graph DB    │    │ Storage  │   │
+│  │              │  │              │    │          │   │
+│  │ • Users      │  │ • Entities   │    │ • Files  │   │
+│  │ • Scans      │  │ • Relations  │    │ • Reports│   │
+│  │ • Reports    │  │ • CVEs       │    │ • Assets │   │
+│  └──────────────┘  └──────────────┘    └──────────┘   │
+└───────────────────────────────────────────────────────┘
                                     ↕
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    EXTERNAL SERVICES                                     │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────┐   │
-│  │   OpenAI     │  │  OWASP ZAP   │  │  SonarQube   │  │  Stripe  │   │
-│  │   GPT-4      │  │   Scanner    │  │   Analysis   │  │ Payments │   │
-│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────┘   │
+┌──────────────────────────────────────────────────────────────────────┐
+│                    EXTERNAL SERVICES                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      
+│  │   OpenAI     │  │              │  │              │                 │
+│  │   GPT-4      │  │   Scanner    │  │   Analysis   │                 │
+│  └──────────────┘  └──────────────┘  └──────────────┘      
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────┐   │
 │  │     NVD      │  │    CIRCL     │  │     OSV      │  │  Convex  │   │
 │  │  CVE Data    │  │  CVE Search  │  │  Vulns DB    │  │ Real-time│   │
@@ -298,9 +290,9 @@ User Input → Frontend → API Gateway → Chat Service
                                            ↓
                                     OpenAI GPT-4
                                            ↓
-                                    RAG Service
+                                    graphRAG Service
                                            ↓
-                        Pinecone Vector Search ← Neo4j Knowledge Graph
+                                Neo4j Knowledge Graph
                                            ↓
                                     Response Stream
                                            ↓
@@ -309,32 +301,10 @@ User Input → Frontend → API Gateway → Chat Service
                                     Convex Storage
 ```
 
-#### **2. Vulnerability Scanning Flow**
-```
-Scan Request → Backend API → Scan Service
-                                  ↓
-                    ┌─────────────┴──────────────┐
-                    ↓                            ↓
-              OWASP ZAP                    SonarQube
-              (DAST Scan)                  (SAST Scan)
-                    ↓                            ↓
-              Vulnerability                  Code Issues
-              Detection                      Detection
-                    ↓                            ↓
-                    └─────────────┬──────────────┘
-                                  ↓
-                          Results Aggregation
-                                  ↓
-                    CVE Database Enrichment
-                                  ↓
-                          PostgreSQL Storage
-                                  ↓
-                          Report Generation
-                                  ↓
-                          Frontend Display
+
 ```
 
-#### **3. Knowledge Graph Generation Flow**
+#### **2. Knowledge Graph Generation Flow**
 ```
 AI Response → Entity Extraction → Relationship Mapping
                                          ↓
@@ -383,7 +353,6 @@ AI Response → Entity Extraction → Relationship Mapping
 | Service | Purpose |
 |---------|---------|
 | **OpenAI GPT-4** | Conversational AI & reasoning |
-| **Pinecone** | Vector database for semantic search |
 | **Neo4j** | Knowledge graph database |
 | **Langchain** | LLM orchestration |
 
@@ -391,8 +360,6 @@ AI Response → Entity Extraction → Relationship Mapping
 
 | Tool | Purpose |
 |------|---------|
-| **OWASP ZAP** | Dynamic application security testing |
-| **SonarQube** | Static code analysis |
 | **NVD API** | CVE vulnerability data |
 | **CIRCL CVE** | CVE search API |
 | **OSV** | Open source vulnerabilities |
@@ -425,8 +392,6 @@ Ensure you have the following installed:
 ### **Required API Keys**
 
 - OpenAI API Key (GPT-4 access)
-- Pinecone API Key
-- Stripe API Key (for payments)
 - Supabase credentials
 - Convex deployment URL
 
@@ -470,11 +435,6 @@ NEO4J_PASSWORD="your-neo4j-password"
 OPENAI_API_KEY="sk-your-openai-api-key"
 OPENAI_MODEL="gpt-4"
 
-# Pinecone
-PINECONE_API_KEY="your-pinecone-api-key"
-PINECONE_ENVIRONMENT="us-west1-gcp"
-PINECONE_INDEX_NAME="cybergpt-embeddings"
-
 # JWT
 JWT_SECRET="your-super-secret-jwt-key"
 JWT_EXPIRES_IN="7d"
@@ -494,11 +454,6 @@ EMAIL_PORT=587
 EMAIL_USER="your-email@gmail.com"
 EMAIL_PASSWORD="your-app-password"
 
-# Security Tools
-ZAP_API_KEY="your-zap-api-key"
-ZAP_BASE_URL="http://localhost:8080"
-SONAR_HOST_URL="http://localhost:9000"
-SONAR_TOKEN="your-sonar-token"
 
 # Application
 PORT=8000
@@ -1194,8 +1149,6 @@ SOFTWARE.
 - [Neo4j](https://neo4j.com/) - Graph database technology
 - [React](https://react.dev/) - Frontend framework
 - [Tailwind CSS](https://tailwindcss.com/) - Styling framework
-- [OWASP ZAP](https://www.zaproxy.org/) - Security testing tool
-- [SonarQube](https://www.sonarsource.com/) - Code quality platform
 
 ### **Inspirations**
 - OWASP Foundation for security standards
