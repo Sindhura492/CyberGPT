@@ -1,0 +1,13 @@
+{
+	"scripts": {
+		"check:fix:frontend": "cd frontend && biome check --write ./src && tsc -b && vite build",
+		"check:fix:backend": "cd backend && bun check",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@types/react-syntax-highlighter": "^15.5.13"
+	},
+	"dependencies": {
+		"stripe": "^17.6.0"
+	}
+}

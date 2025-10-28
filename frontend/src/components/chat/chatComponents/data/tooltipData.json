@@ -1,0 +1,23 @@
+[
+	{
+		"label": "Tutor",
+		"icon": "GlassesIcon",
+		"tooltip": "Expert cybersecurity teacher - provides structured explanations with examples and analogies"
+	},
+	{
+		"label": "Investigator",
+		"icon": "Search",
+		"tooltip": "Digs into problems deeply"
+	},
+	{
+		"label": "Analyst",
+		"icon": "Globe",
+		"tooltip": "Analyzes data and trends"
+	},
+	{
+		"label": "Submit",
+		"icon": "ArrowUp",
+		"tooltip": "Submit or send",
+		"iconOnly": true
+	}
+]

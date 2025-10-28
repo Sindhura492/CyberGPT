@@ -1,0 +1,56 @@
+@media print {
+	/* Ensure large sections or diagrams do not break across pages */
+	.avoid-break {
+		page-break-inside: avoid;
+	}
+
+	/* Force a new page for certain sections */
+	.page-break {
+		page-break-before: always;
+	}
+
+	/* Set header and footer to fixed positions */
+	.print-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100px;
+		z-index: 1000;
+		background: #272278;
+		color: white;
+		padding: 10px;
+		text-align: center;
+	}
+	/* for footer */
+	.print-footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 50px;
+		z-index: 1000;
+		background: #272278;
+		color: white;
+		text-align: center;
+		padding: 10px;
+	}
+
+	/* Ensure content respects header and footer space */
+	body {
+		margin-top: 200px;
+		margin-bottom: 70px;
+	}
+
+	/* Avoid splitting images and diagrams */
+	img,
+	svg {
+		page-break-inside: avoid;
+	}
+
+	/* Content container adjustment */
+	.print-content {
+		margin: auto;
+		padding: 20px;
+	}
+}

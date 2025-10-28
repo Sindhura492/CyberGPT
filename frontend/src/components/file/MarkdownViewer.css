@@ -1,0 +1,321 @@
+@media print {
+	#markdown-container {
+		/* border: #7156db; */
+		/* border: 2px solid black; */
+		padding: 10px;
+		/* border-radius: 4px; */
+		height: 90vh;
+		border: 5px solid transparent !important;
+		page-break-after: avoid !important;
+		page-break-inside: avoid !important;
+	}
+}
+.pdf-export {
+	font-family: "Open Sans", sans-serif !important;
+	line-height: 1.5 !important;
+	color: #000 !important;
+
+	padding: 20px !important;
+	font-size: 12pt !important;
+	/* Adding a colorful gradient border */
+	/* border: 10px solid transparent !important; */
+	border: linear-gradient(150deg, #7156db, #272278 23%, #0f0a25 53%, #080115) !important;
+	border-bottom: linear-gradient(
+		150deg,
+		#7156db,
+		#272278 23%,
+		#0f0a25 53%,
+		#080115
+	) !important;
+}
+.pdf-export .header {
+	text-align: center !important;
+	margin-bottom: 40px !important;
+}
+
+.pdf-export .logo {
+	max-width: 200px !important;
+	margin: 0 auto 10px !important;
+}
+
+.pdf-export h1 {
+	font-family: "Open Sans", sans-serif !important;
+	font-size: 24pt !important;
+	font-weight: bold !important;
+	margin: 0 0 16pt 0 !important;
+	page-break-after: avoid !important;
+	color: linear-gradient(150deg, #7156db, #272278 23%, #0f0a25 53%, #080115) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+}
+
+.pdf-export h2 {
+	font-family: "Open Sans", sans-serif !important;
+	font-size: 16pt !important;
+	font-weight: bold !important;
+	margin: 16pt 0 8pt 0 !important;
+	page-break-after: avoid !important;
+}
+
+.pdf-export h3 {
+	font-family: "Open Sans", sans-serif !important;
+	font-size: 16pt !important;
+	font-weight: bold !important;
+	margin: 8pt 0 !important;
+	page-break-after: avoid !important;
+}
+
+.pdf-export h4,
+.pdf-export h5,
+.pdf-export h6 {
+	font-family: "Open Sans", sans-serif !important;
+	font-size: 16pt !important;
+	font-weight: bold !important;
+	margin: 8pt 0 !important;
+	page-break-after: avoid !important;
+}
+
+.pdf-export p {
+	margin: 0 0 8pt 0 !important;
+	color: #000 !important;
+	orphans: 3 !important;
+	widows: 3 !important;
+}
+
+.pdf-export ul {
+	list-style-type: none !important;
+	padding-left: 0 !important;
+	margin: 8pt 0 !important;
+	page-break-inside: avoid !important;
+}
+
+.pdf-export ul li:before {
+	content: "•" !important;
+	position: absolute !important;
+	left: 0 !important;
+}
+.pdf-export ul ul li::before {
+	content: "•" !important;
+	position: absolute !important;
+	left: 0 !important;
+	color: #555 !important;
+}
+.pdf-export ul li {
+	padding-left: 20px !important;
+	margin: 4pt 0 !important;
+	position: relative !important;
+}
+
+.pdf-export ol {
+	padding-left: 20px !important;
+	margin: 8pt 0 !important;
+	list-style: none !important;
+	counter-reset: main-counter !important;
+}
+.pdf-export ol > li {
+	counter-increment: main-counter !important;
+	/* // text-indent: 0 !important; */
+	padding-left: 25px !important;
+	position: relative !important;
+}
+.pdf-export ol > li::before {
+	content: counter(main-counter) "." !important;
+	position: absolute !important;
+	left: 0 !important;
+	width: 20px !important;
+}
+.pdf-export ul {
+	list-style-type: none !important;
+	padding-left: 25px !important;
+	margin: 8pt 0 !important;
+}
+.pdf-export ul > li::before {
+	content: "•" !important;
+	position: absolute !important;
+	left: 0 !important;
+}
+
+.pdf-export ul li {
+	padding-left: 20px !important;
+	margin: 4pt 0 !important;
+	position: relative !important;
+}
+
+.pdf-export li {
+	color: #000 !important;
+	margin: 4pt 0 !important;
+	page-break-inside: avoid !important;
+	display: block !important;
+}
+
+.pdf-export code {
+	font-family: "Open Sans", sans-serif !important;
+	background: none !important;
+	padding: 0 !important;
+	font-size: 12pt !important;
+}
+
+.pdf-export pre {
+	font-family: "Open Sans", sans-serif !important;
+	background: none !important;
+	padding: 8pt !important;
+	margin: 8pt 0 !important;
+	border: none !important;
+	font-size: 12pt !important;
+	page-break-inside: avoid !important;
+}
+
+.pdf-export blockquote {
+	margin: 8pt 0 8pt 20pt !important;
+	padding: 0 !important;
+	border: none !important;
+	font-style: normal !important;
+	page-break-inside: avoid !important;
+}
+
+.pdf-export table {
+	border-collapse: collapse !important;
+	width: 100% !important;
+	margin: 8pt 0 !important;
+	font-size: 12pt !important;
+	page-break-inside: avoid !important;
+}
+
+.pdf-export th,
+.pdf-export td {
+	border: 1px solid #000 !important;
+	padding: 4pt 8pt !important;
+	text-align: left !important;
+}
+
+.pdf-export thead {
+	background: none !important;
+}
+/* Keep vulnerability sections together */
+.pdf-export section {
+	page-break-inside: avoid !important;
+}
+
+/* Prevent orphaned headers */
+.pdf-export h1,
+.pdf-export h2,
+.pdf-export h3,
+.pdf-export h4,
+.pdf-export h5,
+.pdf-export h6 {
+	orphans: 3 !important;
+	widows: 3 !important;
+}
+
+/* Keep lists with their headers */
+.pdf-export h1 + ul,
+.pdf-export h2 + ul,
+.pdf-export h3 + ul,
+.pdf-export h1 + ol,
+.pdf-export h2 + ol,
+.pdf-export h3 + ol {
+	page-break-before: avoid !important;
+}
+
+/* Ensure proper spacing without forcing page breaks */
+.pdf-export hr {
+	margin: 16pt 0 !important;
+	border-color: #0f0a25 !important;
+}
+@media print {
+	.pdf-export * {
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+	}
+	.pdf-export {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+}
+/* Apply a simple page break before each section */
+.pdf-export h1,
+.pdf-export h2,
+.pdf-export h3 {
+	page-break-before: always !important;
+}
+
+/* Add Footer Styles */
+.pdf-footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 10pt;
+	color: #000;
+	padding: 10px;
+	background-color: #f4f4f4;
+	border-top: 1px solid #ccc;
+}
+
+.pdf-footer p {
+	margin: 0;
+}
+
+.pdf-footer a {
+	text-decoration: none;
+	color: #000;
+}
+
+.jargon-highlight {
+  background: rgba(59, 130, 246, 0.06); /* very subtle blue tint */
+  border-bottom: 1px solid rgba(59, 130, 246, 0.25); /* subtle blue underline */
+  border-radius: 2px;
+  padding: 0 1px;
+  cursor: pointer;
+  font-weight: 500;
+  color: inherit;
+  transition: all 0.15s ease;
+}
+.jargon-highlight:hover,
+.jargon-highlight:focus {
+  background: rgba(59, 130, 246, 0.1);
+  border-bottom-color: rgba(59, 130, 246, 0.4);
+  color: inherit;
+}
+
+/* Dark mode specific jargon highlighting */
+.dark .jargon-highlight {
+  background: rgba(147, 197, 253, 0.12); /* soft light blue background for dark mode */
+  border-bottom: 1px solid rgba(147, 197, 253, 0.4); /* darker blue underline for visibility */
+}
+
+.dark .jargon-highlight:hover,
+.dark .jargon-highlight:focus {
+  background: rgba(147, 197, 253, 0.18);
+  border-bottom-color: rgba(147, 197, 253, 0.6);
+}
+
+/* Code block styling */
+.prose pre {
+  background-color: hsl(var(--sidebar-background)) !important;
+  border: 1px solid hsl(var(--sidebar-border)) !important;
+  border-radius: 0.375rem !important;
+  overflow-x: auto !important;
+  margin: 1rem 0 !important;
+  color: hsl(var(--sidebar-foreground)) !important;
+}
+
+.prose code {
+  background-color: hsl(var(--sidebar-accent)) !important;
+  border: 1px solid hsl(var(--sidebar-border)) !important;
+  border-radius: 0.25rem !important;
+  padding: 0.125rem 0.25rem !important;
+  font-size: 0.875rem !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  color: hsl(var(--sidebar-foreground)) !important;
+}
+
+/* Ensure code blocks are properly displayed */
+.prose pre code {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: inherit !important;
+}

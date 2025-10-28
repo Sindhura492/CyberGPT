@@ -1,0 +1,38 @@
+[
+	{
+		"name": "Utkarsh",
+		"title": "I am Utkarsh..",
+		"file": "/Avatars/uth.fbx",
+		"role": "Vulnerability Specialist"
+	},
+	{
+		"name": "Shweta",
+		"title": "Hello...I am Shweta",
+		"file": "/Avatars/WavingShweta.fbx",
+		"role": "Threat Detector"
+	},
+	{
+		"name": "Sindhura",
+		"title": "Ola...I am Sindhura",
+		"file": "/Avatars/Sindhu.fbx",
+		"role": "Common Vulnerability Assessor"
+	},
+	{
+		"name": "Chaitali",
+		"title": "Hi! I am Chaitali",
+		"file": "/Avatars/Chaitali.fbx",
+		"role": "Incident Responder"
+	},
+	{
+		"name": "Nithin",
+		"title": "Hello! I am Nithin",
+		"file": "/Avatars/Nithin.fbx",
+		"role": "Security Analyst"
+	},
+	{
+		"name": "Mariya",
+		"title": "OLA! I am Mariya",
+		"file": "/Avatars/Maria.fbx",
+		"role": "Penetration Tester"
+	}
+]

@@ -1,0 +1,516 @@
+{
+	"message": "Scan completed successfully for compliance standard: HIPAA.",
+	"totals": {
+		"totalIssues": 38,
+		"totalIssue": 38,
+		"critical": 0,
+		"high": 0,
+		"medium": 9,
+		"low": 12,
+		"informational": 17
+	},
+	"complianceStandardUrl": "HIPAA",
+	"targetUrl": "https://juice-shop.herokuapp.com",
+	"scanType": "passive",
+	"filteredAlerts": [
+		{
+			"pluginid": "10098",
+			"alertRef": "10098",
+			"alert": "Cross-Domain Misconfiguration",
+			"name": "Cross-Domain Misconfiguration",
+			"riskcode": "2",
+			"confidence": "2",
+			"riskdesc": "Medium (Medium)",
+			"desc": "<p>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/assets/public/favicon_js.ico",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/main.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/polyfills.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/robots.txt",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/runtime.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/sitemap.xml",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/styles.css",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/vendor.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "Access-Control-Allow-Origin: *",
+					"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+				}
+			],
+			"count": "9",
+			"solution": "<p>Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).</p><p>Configure the \"Access-Control-Allow-Origin\" HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</p>",
+			"otherinfo": "<p>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</p>",
+			"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
+			"cweid": "264",
+			"wascid": "14",
+			"sourceid": "1",
+			"cve_id": []
+		},
+		{
+			"pluginid": "10110",
+			"alertRef": "10110",
+			"alert": "Dangerous JS Functions",
+			"name": "Dangerous JS Functions",
+			"riskcode": "1",
+			"confidence": "1",
+			"riskdesc": "Low (Low)",
+			"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com/main.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "bypassSecurityTrustHtml(",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/vendor.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "bypassSecurityTrustHtml(",
+					"otherinfo": ""
+				}
+			],
+			"count": "2",
+			"solution": "<p>See the references for security advice on the use of these functions.</p>",
+			"otherinfo": "",
+			"reference": "<p>https://angular.io/guide/security</p>",
+			"cweid": "749",
+			"wascid": "-1",
+			"sourceid": "23",
+			"cve_id": []
+		},
+		{
+			"pluginid": "10096",
+			"alertRef": "10096",
+			"alert": "Timestamp Disclosure - Unix",
+			"name": "Timestamp Disclosure - Unix",
+			"riskcode": "1",
+			"confidence": "1",
+			"riskdesc": "Low (Low)",
+			"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/assets/public/favicon_js.ico",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/ftp",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/main.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "1734944650",
+					"otherinfo": "1734944650, which evaluates to: 2024-12-23 09:04:10."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/main.js",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/polyfills.js",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/robots.txt",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/runtime.js",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/sitemap.xml",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/styles.css",
+					"method": "GET",
+					"param": "Reporting-Endpoints",
+					"attack": "",
+					"evidence": "1736298400",
+					"otherinfo": "1736298400, which evaluates to: 2025-01-08 01:06:40."
+				}
+			],
+			"count": "10",
+			"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
+			"otherinfo": "<p>1736298400, which evaluates to: 2025-01-08 01:06:40.</p>",
+			"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
+			"cweid": "200",
+			"wascid": "13",
+			"sourceid": "1",
+			"cve_id": [
+				"CVE-2024-13110",
+				"CVE-2024-13042",
+				"CVE-2024-47923",
+				"CVE-2024-47922",
+				"CVE-2024-12984",
+				"CVE-2017-7923"
+			]
+		},
+		{
+			"pluginid": "10027",
+			"alertRef": "10027",
+			"alert": "Information Disclosure - Suspicious Comments",
+			"name": "Information Disclosure - Suspicious Comments",
+			"riskcode": "0",
+			"confidence": "1",
+			"riskdesc": "Informational (Low)",
+			"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com/main.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "query",
+					"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[179],{4550:(tt,K,c)=>{c.d(K,{e:()=>s});var S=c(234\", see evidence field for the suspicious comment/snippet."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/vendor.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "query",
+					"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[736],{9187:(At,ae,d)=>{\"use strict\";d.d(ae,{Xy:()=>J,ne:()=>Be,\", see evidence field for the suspicious comment/snippet."
+				}
+			],
+			"count": "2",
+			"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
+			"otherinfo": "<p>The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[179],{4550:(tt,K,c)=>{c.d(K,{e:()=>s});var S=c(234\", see evidence field for the suspicious comment/snippet.</p>",
+			"reference": "",
+			"cweid": "200",
+			"wascid": "13",
+			"sourceid": "23",
+			"cve_id": [
+				"CVE-2024-13110",
+				"CVE-2024-13042",
+				"CVE-2024-47923",
+				"CVE-2024-47922",
+				"CVE-2024-12984",
+				"CVE-2017-7923"
+			]
+		},
+		{
+			"pluginid": "10109",
+			"alertRef": "10109",
+			"alert": "Modern Web Application",
+			"name": "Modern Web Application",
+			"riskcode": "0",
+			"confidence": "2",
+			"riskdesc": "Informational (Medium)",
+			"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "<script src=\"//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js\"></script>",
+					"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/sitemap.xml",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "<script src=\"//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js\"></script>",
+					"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+				}
+			],
+			"count": "2",
+			"solution": "<p>This is an informational alert and so no changes are required.</p>",
+			"otherinfo": "<p>No links have been found while there are scripts, which is an indication that this is a modern web application.</p>",
+			"reference": "",
+			"cweid": "-1",
+			"wascid": "-1",
+			"sourceid": "1",
+			"cve_id": []
+		},
+		{
+			"pluginid": "10049",
+			"alertRef": "10049",
+			"alert": "Non-Storable Content",
+			"name": "Non-Storable Content",
+			"riskcode": "0",
+			"confidence": "2",
+			"riskdesc": "Informational (Medium)",
+			"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com/ftp",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "no-store",
+					"otherinfo": ""
+				}
+			],
+			"count": "1",
+			"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).</p>",
+			"otherinfo": "",
+			"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+			"cweid": "524",
+			"wascid": "13",
+			"sourceid": "16",
+			"cve_id": []
+		},
+		{
+			"pluginid": "10015",
+			"alertRef": "10015",
+			"alert": "Re-examine Cache-control Directives",
+			"name": "Re-examine Cache-control Directives",
+			"riskcode": "0",
+			"confidence": "1",
+			"riskdesc": "Informational (Low)",
+			"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com",
+					"method": "GET",
+					"param": "cache-control",
+					"attack": "",
+					"evidence": "public, max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/robots.txt",
+					"method": "GET",
+					"param": "cache-control",
+					"attack": "",
+					"evidence": "",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/sitemap.xml",
+					"method": "GET",
+					"param": "cache-control",
+					"attack": "",
+					"evidence": "public, max-age=0",
+					"otherinfo": ""
+				}
+			],
+			"count": "3",
+			"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
+			"otherinfo": "",
+			"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
+			"cweid": "525",
+			"wascid": "13",
+			"sourceid": "1",
+			"cve_id": []
+		},
+		{
+			"pluginid": "10049",
+			"alertRef": "10049",
+			"alert": "Storable and Cacheable Content",
+			"name": "Storable and Cacheable Content",
+			"riskcode": "0",
+			"confidence": "2",
+			"riskdesc": "Informational (Medium)",
+			"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com/robots.txt",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "",
+					"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+				}
+			],
+			"count": "1",
+			"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+			"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
+			"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+			"cweid": "524",
+			"wascid": "13",
+			"sourceid": "13",
+			"cve_id": []
+		},
+		{
+			"pluginid": "10049",
+			"alertRef": "10049",
+			"alert": "Storable but Non-Cacheable Content",
+			"name": "Storable but Non-Cacheable Content",
+			"riskcode": "0",
+			"confidence": "2",
+			"riskdesc": "Informational (Medium)",
+			"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users.</p>",
+			"instances": [
+				{
+					"uri": "https://juice-shop.herokuapp.com",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/assets/public/favicon_js.ico",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/main.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/polyfills.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/runtime.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/sitemap.xml",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/styles.css",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				},
+				{
+					"uri": "https://juice-shop.herokuapp.com/vendor.js",
+					"method": "GET",
+					"param": "",
+					"attack": "",
+					"evidence": "max-age=0",
+					"otherinfo": ""
+				}
+			],
+			"count": "8",
+			"solution": "",
+			"otherinfo": "",
+			"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+			"cweid": "524",
+			"wascid": "13",
+			"sourceid": "6",
+			"cve_id": []
+		}
+	],
+	"userId": 19
+}
